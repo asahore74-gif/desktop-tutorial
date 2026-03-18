@@ -1,0 +1,119 @@
+import pyttsx3
+
+engine = pyttsx3.init()
+engine.say("Hello, I am your AI assistant")
+engine.runAndWait() 
+
+
+
+
+
+import speech_recognition as sr
+
+r = sr.Recognizer()
+
+with sr.Microphone() as source:
+    print("Speak something...")
+    audio = r.listen(source)
+
+try:
+    text = r.recognize_google(audio)
+    print("You said:", text)
+except:
+    print("Sorry, could not understand")
+
+
+
+
+
+import requests
+
+response = requests.get("https://api.github.com")
+print(response.status_code)
+print(response.text)
+
+
+
+
+import wikipedia
+
+result = wikipedia.summary("Python programming", sentences=2)
+print(result)
+
+
+
+
+
+
+
+from datetime import datetime
+
+now = datetime.now()
+print("Current time:", now)
+
+print("Year:", now.year)
+print("Month:", now.month)
+
+
+
+
+
+
+
+
+import math
+
+print(math.sqrt(16))     
+print(math.factorial(5)) 
+print(math.pi)
+
+
+
+
+
+
+import random
+
+print(random.randint(1, 10))   
+print(random.choice(["apple", "banana", "mango"]))
+
+
+
+
+import sys
+
+print(sys.version)
+print(sys.argv)  
+
+
+
+
+text = "Hello Python"
+
+print(text.lower())
+print(text.upper())
+print(text.replace("Python", "World"))
+print(text.split())
+
+
+
+
+
+import os
+
+print(os.getcwd())   
+os.mkdir("test_folder")  
+
+
+
+
+
+import copy
+
+list1 = [1, 2, [3, 4]]
+list2 = copy.deepcopy(list1)
+
+list2[2][0] = 99
+
+print(list1)  
+print(list2)
